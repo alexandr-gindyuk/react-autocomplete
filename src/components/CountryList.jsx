@@ -5,7 +5,7 @@ const CountryList = props => {
     return (
         <ul>
             {
-                props.abc.map(country => {
+                props.name.map(country => {
                     return (
                         <CountryItem country={country.name} key={country.id} />
                     )

@@ -1,30 +1,27 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './css/App.css'
-import CountryList from './components/CountryList'
+import Autocomplete from './components/Autocomplete'
 
 function App() {
-  const listCountries = [
+  const countries = [
     {id: 0, name: "Ukraine"},
     {id: 1, name: "France"},
     {id: 2, name: "Germany"},
     {id: 3, name: "USA"}
   ]
 
-  const [searchRequest, setSearchRequest] = useState('')
-
-  const filteredCountries = listCountries.filter(country => country.name.toLowerCase().includes(searchRequest.toLowerCase()))
-
-  const inputOnChangeHandler = e => {
-    setSearchRequest(e.target.value)
-  }
+  const cars = [
+    {id: 0, name: "Tesla"},
+    {id: 1, name: "BMW"},
+    {id: 2, name: "Audi"},
+    {id: 3, name: "Volkswagen"}
+  ]
 
   return (
     <div className="App">
 
-      <h1>Countries</h1>
-      <input onChange={inputOnChangeHandler} type="text" placeholder="Enter Country" />
-
-      <CountryList abc={filteredCountries} />
+      <Autocomplete name={countries} />
+      <Autocomplete name={cars} />
 
     </div>
   )
